@@ -108,3 +108,17 @@ Processing by GreetingsController#random as HTML
 Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 731)
 
 
+Started GET "/" for 127.0.0.1 at 2023-09-19 19:45:09 +0300
+Processing by GreetingsController#random as HTML
+  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/greetings_controller.rb:3:in `random'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 716)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-19 19:45:31 +0300
+Processing by GreetingsController#random as HTML
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/greetings_controller.rb:10:in `random'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 4.9ms | Allocations: 2690)
+
+
