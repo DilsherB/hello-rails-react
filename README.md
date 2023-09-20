@@ -1,9 +1,6 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="./app/assets/images/dilsher-logo.png" alt="logo" width="140"  height="auto" />
-  <img src="./app/assets/images/DSB.png" alt="logo" width="140"  height="auto" />
-  <br/>
   <h1><b>Hello Rails React App</b></h1>
 </div>
 <!-- TABLE OF CONTENTS -->
@@ -14,8 +11,6 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
-    - [🚀 Live Demo](#live-demo)
-    - [🔭 Video Presentation](#video)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
