@@ -1,10 +1,6 @@
 class GreetingsController < ApplicationController
-  def random
+  def index
     greeting = Message.order('RANDOM()').first
-    response_data = { greeting: greeting.greeting }
-
-    json_response = JSON.pretty_generate(response_data)
-
-    render json: json_response, content_type: 'application/json'
+    render json: { greeting: greeting.greeting }
   end
 end

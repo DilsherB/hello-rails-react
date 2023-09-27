@@ -1,25 +1,29 @@
-const path = require("path");
-const webpack = require("webpack");
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
+  mode: 'production',
+  devtool: 'source-map',
   entry: {
-    application: "./app/javascript/packs/application.js",
-  },
-  output: {
-    filename: "[name].js",
-    path: path.resolve(__dirname, "app/assets/javascripts"),
+    application: './app/javascript/application.js',
   },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"],
-          },
-        },
+        test: /\.(js)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
       },
     ],
   },
+  output: {
+    filename: '[name].js',
+    sourceMapFilename: '[name].js.map',
+    path: path.resolve(__dirname, 'app/assets/builds'),
+  },
+  plugins: [
+    new webpack.optimize.LimitChunkCountPlugin({
+      maxChunks: 1,
+    }),
+  ],
 };
