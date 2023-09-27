@@ -1,752 +1,257 @@
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (1.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[35m (77.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello_rails_react_development"[0m
-  [1m[35m (51.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello_rails_react_test"[0m
-  [1m[35m (228.1ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
-  [1m[35m (131.8ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_test" ENCODING = 'unicode'[0m
-  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
-  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6835469566630085430)[0m
+  [1m[35m (241.1ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
+  [1m[35m (140.8ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_test" ENCODING = 'unicode'[0m
+  [1m[35m (20.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6835469566630085430)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to CreateMessages (20230919153656)
-  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "greeting" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230919153656"]]
-  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
-  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mActiveRecord::InternalMetadata Create (1.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-09-27 06:13:29.489628"], ["updated_at", "2023-09-27 06:13:29.489628"]]
-  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
-  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(6835469566630085430)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Started GET "/" for 127.0.0.1 at 2023-09-27 09:15:01 +0300
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by GreetingsController#index as HTML
-  [1m[36mMessage Load (3.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/greetings_controller.rb:3:in `index'
-Completed 500 Internal Server Error in 36ms (ActiveRecord: 3.2ms | Allocations: 4300)
-
-
-  
-NoMethodError (undefined method `greeting' for nil:NilClass):
-  
-app/controllers/greetings_controller.rb:4:in `index'
-Started GET "/" for 127.0.0.1 at 2023-09-27 09:15:11 +0300
-Processing by GreetingsController#index as HTML
-  [1m[36mMessage Load (1.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/greetings_controller.rb:3:in `index'
-Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.1ms | Allocations: 1029)
-
-
-  
-NoMethodError (undefined method `greeting' for nil:NilClass):
-  
-app/controllers/greetings_controller.rb:4:in `index'
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 09:16:36 +0300
-Processing by Api::GreetingsController#index as HTML
-  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
-Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.6ms | Allocations: 1005)
-
-
-  
-NoMethodError (undefined method `greeting' for nil:NilClass):
-  
-app/controllers/api/greetings_controller.rb:4:in `index'
-Started GET "/greetings" for 127.0.0.1 at 2023-09-27 09:17:31 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greetings"):
-  
-Started GET "/" for 127.0.0.1 at 2023-09-27 09:17:38 +0300
-Processing by GreetingsController#index as HTML
-  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/greetings_controller.rb:3:in `index'
-Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.4ms | Allocations: 1026)
-
-
-  
-NoMethodError (undefined method `greeting' for nil:NilClass):
-  
-app/controllers/greetings_controller.rb:4:in `index'
-Started GET "/" for 127.0.0.1 at 2023-09-27 09:32:24 +0300
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 336)
-  Rendered layout layouts/application.html.erb (Duration: 523.2ms | Allocations: 73634)
-Completed 200 OK in 567ms (Views: 537.2ms | ActiveRecord: 0.0ms | Allocations: 78059)
-
-
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 09:32:29 +0300
-Processing by Api::GreetingsController#index as */*
-  [1m[36mMessage Load (5.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
-Completed 500 Internal Server Error in 12ms (ActiveRecord: 5.2ms | Allocations: 2336)
-
-
-  
-NoMethodError (undefined method `greeting' for nil:NilClass):
-  
-app/controllers/api/greetings_controller.rb:4:in `index'
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 09:32:30 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greeting"):
-  
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 09:33:04 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greeting"):
-  
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (1.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[35m (102.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello_rails_react_development"[0m
-  [1m[35m (122.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello_rails_react_test"[0m
-  [1m[35m (230.0ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
-  [1m[35m (155.9ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_test" ENCODING = 'unicode'[0m
-  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
-  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6835469566630085430)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to CreateMessages (20230919153656)
-  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "greeting" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230919153656"]]
-  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
-  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mActiveRecord::InternalMetadata Create (2.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-09-27 06:45:38.071733"], ["updated_at", "2023-09-27 06:45:38.071733"]]
-  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
-  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(6835469566630085430)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mMessage Create (1.2ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "hello world"], ["created_at", "2023-09-27 06:45:38.540421"], ["updated_at", "2023-09-27 06:45:38.540421"]]
+Migrating to CreateMessages (20230918144530)
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "greeting" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230918144530"]]
   [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
-  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "welcome to my site"], ["created_at", "2023-09-27 06:45:38.553340"], ["updated_at", "2023-09-27 06:45:38.553340"]]
-  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mMessage Create (0.9ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Nice to see you!"], ["created_at", "2023-09-27 06:45:38.558367"], ["updated_at", "2023-09-27 06:45:38.558367"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-09-27 08:22:37.733481"], ["updated_at", "2023-09-27 08:22:37.733481"]]
   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
-  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mMessage Create (0.6ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "How can we help you today?"], ["created_at", "2023-09-27 06:45:38.564071"], ["updated_at", "2023-09-27 06:45:38.564071"]]
-  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mMessage Create (0.9ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Have a great day!"], ["created_at", "2023-09-27 06:45:38.569211"], ["updated_at", "2023-09-27 06:45:38.569211"]]
-  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
-Started GET "/" for 127.0.0.1 at 2023-09-27 09:46:59 +0300
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6835469566630085430)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-09-27 11:22:59 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by RootController#index as HTML
   Rendering layout layouts/application.html.erb
   Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 16.5ms | Allocations: 336)
-  Rendered layout layouts/application.html.erb (Duration: 788.7ms | Allocations: 34884)
-Completed 200 OK in 931ms (Views: 818.6ms | ActiveRecord: 0.0ms | Allocations: 39377)
+  Rendered root/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 463)
+  Rendered layout layouts/application.html.erb (Duration: 331.8ms | Allocations: 71937)
+Completed 500 Internal Server Error in 388ms (ActiveRecord: 0.0ms | Allocations: 78760)
 
 
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 09:47:04 +0300
-Processing by Api::GreetingsController#index as */*
-  [1m[36mMessage Load (5.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
-Completed 200 OK in 44ms (Views: 0.4ms | ActiveRecord: 18.8ms | Allocations: 5879)
-
-
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 09:47:05 +0300
   
-ActionController::RoutingError (No route matches [GET] "/greeting"):
+ActionView::Template::Error (Permission denied @ rb_file_s_rename - (C:/Users/dilsh/Desktop/New folder/hello-rails-react/tmp/cache/assets/sprockets/v4.0.0/Ih/Ih08bfyMdzFTCMIVTjcJORJa-0Vmqf-za-yoc69JL90.cache.21940.23832.617133, C:/Users/dilsh/Desktop/New folder/hello-rails-react/tmp/cache/assets/sprockets/v4.0.0/Ih/Ih08bfyMdzFTCMIVTjcJORJa-0Vmqf-za-yoc69JL90.cache)):
   
-Started GET "/" for 127.0.0.1 at 2023-09-27 09:47:17 +0300
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
-  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2841)
-Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 3103)
-
-
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 09:47:24 +0300
-Processing by Api::GreetingsController#index as */*
-  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
-Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 735)
-
-
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 09:47:36 +0300
+sprockets (4.2.1) lib/sprockets/path_utils.rb:362:in `rename'
+sprockets (4.2.1) lib/sprockets/path_utils.rb:362:in `atomic_write'
+sprockets (4.2.1) lib/sprockets/cache/file_store.rb:112:in `set'
+sprockets (4.2.1) lib/sprockets/cache.rb:227:in `set'
+sprockets (4.2.1) lib/sprockets/cache.rb:143:in `set'
+sprockets (4.2.1) lib/sprockets/loader.rb:343:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/bundle.rb:32:in `block in call'
+C:/Ruby32-x64/lib/ruby/3.2.0/set.rb:511:in `each_key'
+C:/Ruby32-x64/lib/ruby/3.2.0/set.rb:511:in `each'
+sprockets (4.2.1) lib/sprockets/bundle.rb:31:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.1) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+Started GET "/" for 127.0.0.1 at 2023-09-27 12:06:01 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   
-ActionController::RoutingError (No route matches [GET] "/greeting"):
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20230918144530_create_messages.rb
+
+
+):
   
-Started GET "/api/greeting" for 127.0.0.1 at 2023-09-27 09:47:53 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/api/greeting"):
-  
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 09:47:57 +0300
-Processing by Api::GreetingsController#index as HTML
-  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
-Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 729)
-
-
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 09:47:59 +0300
-Processing by Api::GreetingsController#index as HTML
-  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
-Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 729)
-
-
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 09:48:01 +0300
-Processing by Api::GreetingsController#index as HTML
-  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
-Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 716)
-
-
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 09:48:04 +0300
-Processing by Api::GreetingsController#index as HTML
-  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
-Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 718)
-
-
-Started GET "/" for 127.0.0.1 at 2023-09-27 09:48:12 +0300
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
-  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 2852)
-Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 3110)
-
-
-Started GET "/" for 127.0.0.1 at 2023-09-27 09:48:19 +0300
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
-  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 2832)
-Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 3089)
-
-
-Started GET "/" for 127.0.0.1 at 2023-09-27 09:48:23 +0300
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
-  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 2840)
-Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 3097)
-
-
-Started GET "/" for 127.0.0.1 at 2023-09-27 09:48:27 +0300
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
-  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 2848)
-Completed 200 OK in 10ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 3106)
-
-
-Started GET "/" for 127.0.0.1 at 2023-09-27 09:48:28 +0300
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
-  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 2835)
-Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 3093)
-
-
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 09:48:31 +0300
-Processing by Api::GreetingsController#index as */*
-  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
-Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 720)
-
-
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 09:48:50 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greeting"):
-  
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+activerecord (7.0.8) lib/active_record/migration.rb:662:in `check_pending!'
+activerecord (7.0.8) lib/active_record/migration.rb:627:in `block (2 levels) in call'
+activesupport (7.0.8) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.8) lib/active_record/migration.rb:632:in `block in call'
+activerecord (7.0.8) lib/active_record/migration.rb:624:in `synchronize'
+activerecord (7.0.8) lib/active_record/migration.rb:624:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8) lib/rails/engine.rb:530:in `call'
+puma (5.6.7) lib/puma/configuration.rb:252:in `call'
+puma (5.6.7) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.7) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.7) lib/puma/server.rb:443:in `process_client'
+puma (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6835469566630085430)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMessages (20230918144530)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.3ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "greeting" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6835469566630085430)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::InternalMetadata Pluck (1.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[35m (53.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello_rails_react_development"[0m
-  [1m[35m (41.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello_rails_react_test"[0m
-  [1m[35m (195.2ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
-  [1m[35m (141.5ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_test" ENCODING = 'unicode'[0m
-  [1m[35m (16.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
-  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6835469566630085430)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to CreateMessages (20230919153656)
-  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "greeting" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[36mActiveRecord::SchemaMigration Create (2.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230919153656"]]
-  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
-  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mActiveRecord::InternalMetadata Create (2.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-09-27 06:54:52.416907"], ["updated_at", "2023-09-27 06:54:52.416907"]]
-  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
-  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(6835469566630085430)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mMessage Create (1.6ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "HI!  Welcome to Rails React App!!!"], ["created_at", "2023-09-27 06:54:52.917957"], ["updated_at", "2023-09-27 06:54:52.917957"]]
-  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
-  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "HI!  Message from the App!!!"], ["created_at", "2023-09-27 06:54:52.925405"], ["updated_at", "2023-09-27 06:54:52.925405"]]
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
-  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "HI!  How are you today?!!!"], ["created_at", "2023-09-27 06:54:52.930401"], ["updated_at", "2023-09-27 06:54:52.930401"]]
-  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mMessage Create (0.6ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "HI!  Trust me, This is very cool App!!!"], ["created_at", "2023-09-27 06:54:52.943482"], ["updated_at", "2023-09-27 06:54:52.943482"]]
-  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mMessage Create (0.6ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "HI!  Haha, Again me welcoming you!!!"], ["created_at", "2023-09-27 06:54:52.948337"], ["updated_at", "2023-09-27 06:54:52.948337"]]
-  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
-Started GET "/" for 127.0.0.1 at 2023-09-27 09:55:18 +0300
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 336)
-  Rendered layout layouts/application.html.erb (Duration: 90.0ms | Allocations: 25796)
-Completed 200 OK in 138ms (Views: 104.5ms | ActiveRecord: 0.0ms | Allocations: 30221)
-
-
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 09:55:20 +0300
-Processing by Api::GreetingsController#index as */*
-  [1m[36mMessage Load (2.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
-Completed 200 OK in 44ms (Views: 0.4ms | ActiveRecord: 6.9ms | Allocations: 5871)
-
-
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 09:55:23 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greeting"):
-  
-Started GET "/greetings" for 127.0.0.1 at 2023-09-27 09:55:50 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greetings"):
-  
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 09:56:22 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greeting"):
-  
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 09:56:41 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greeting"):
-  
-Started GET "/" for 127.0.0.1 at 2023-09-27 09:56:49 +0300
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 10)
-  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 2927)
-Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 3449)
-
-
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 09:56:50 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/api/greetings"):
-  
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 09:56:52 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greeting"):
-  
-Started GET "/api/greeting" for 127.0.0.1 at 2023-09-27 09:57:04 +0300
-  
-ActionController::RoutingError (uninitialized constant Api::GreetingController):
-  
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 09:57:27 +0300
-Processing by Api::GreetingsController#index as HTML
-  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
-Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 5.2ms | Allocations: 2691)
-
-
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 09:57:48 +0300
-Processing by Api::GreetingsController#index as HTML
-  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
-Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 717)
-
-
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 09:57:49 +0300
-Processing by Api::GreetingsController#index as HTML
-  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
-Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 730)
-
-
-Started GET "/" for 127.0.0.1 at 2023-09-27 09:57:55 +0300
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 10)
-  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 2926)
-Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 3441)
-
-
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 09:57:56 +0300
-Processing by Api::GreetingsController#index as */*
-  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
-Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 734)
-
-
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 09:57:57 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greeting"):
-  
-Started GET "/" for 127.0.0.1 at 2023-09-27 09:59:52 +0300
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 336)
-  Rendered layout layouts/application.html.erb (Duration: 82.2ms | Allocations: 25774)
-Completed 200 OK in 128ms (Views: 97.2ms | ActiveRecord: 0.0ms | Allocations: 30197)
-
-
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 09:59:56 +0300
-Processing by Api::GreetingsController#index as */*
-  [1m[36mMessage Load (1.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
-Completed 200 OK in 40ms (Views: 0.2ms | ActiveRecord: 6.7ms | Allocations: 5871)
-
-
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 09:59:57 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greeting"):
-  
-Started GET "/" for 127.0.0.1 at 2023-09-27 10:00:11 +0300
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
-  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 2855)
-Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 3117)
-
-
-Started GET "/" for 127.0.0.1 at 2023-09-27 10:02:20 +0300
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
-  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 2822)
-Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 3079)
-
-
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 10:02:23 +0300
-Processing by Api::GreetingsController#index as */*
-  [1m[36mMessage Load (0.9ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
-Completed 200 OK in 15ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 722)
-
-
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 10:02:27 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greeting"):
-  
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 10:02:34 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greeting"):
-  
-Started GET "/" for 127.0.0.1 at 2023-09-27 10:03:44 +0300
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
-  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 2857)
-Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 3117)
-
-
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 10:03:46 +0300
-Processing by Api::GreetingsController#index as */*
-  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
-Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 723)
-
-
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 10:03:47 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greeting"):
-  
-Started GET "/greetings" for 127.0.0.1 at 2023-09-27 10:03:57 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greetings"):
-  
-Started GET "/" for 127.0.0.1 at 2023-09-27 10:05:47 +0300
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 10)
-  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 2937)
-Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 3457)
-
-
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 10:05:51 +0300
-Processing by Api::GreetingsController#index as */*
-  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
-Completed 200 OK in 30ms (Views: 0.2ms | ActiveRecord: 11.2ms | Allocations: 2698)
-
-
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 10:05:52 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greeting"):
-  
-Started GET "/" for 127.0.0.1 at 2023-09-27 10:06:16 +0300
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 10)
-  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 2938)
-Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 3458)
-
-
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 10:06:20 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/api/greetings"):
-  
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 10:06:25 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greeting"):
-  
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 10:06:26 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greeting"):
-  
-Started GET "/" for 127.0.0.1 at 2023-09-27 10:06:29 +0300
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
-  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 2841)
-Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 3099)
-
-
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 10:06:30 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/api/greetings"):
-  
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 10:06:31 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greeting"):
-  
-Started GET "/" for 127.0.0.1 at 2023-09-27 10:06:39 +0300
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
-  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 2856)
-Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 3114)
-
-
-Started GET "/" for 127.0.0.1 at 2023-09-27 10:07:00 +0300
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
-  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 2834)
-Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.0ms | Allocations: 3091)
-
-
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 10:07:02 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/api/greetings"):
-  
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 10:07:04 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greeting"):
-  
-Started GET "/" for 127.0.0.1 at 2023-09-27 10:07:34 +0300
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 336)
-  Rendered layout layouts/application.html.erb (Duration: 88.7ms | Allocations: 25876)
-Completed 200 OK in 122ms (Views: 99.3ms | ActiveRecord: 0.0ms | Allocations: 30299)
-
-
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 10:07:37 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/api/greetings"):
-  
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 10:07:39 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greeting"):
-  
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (110.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello_rails_react_development"[0m
+  [1m[35m (93.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello_rails_react_test"[0m
+  [1m[35m (264.6ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
+  [1m[35m (201.4ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_test" ENCODING = 'unicode'[0m
+  [1m[35m (22.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6835469566630085430)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (2.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[35m (70.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello_rails_react_development"[0m
-  [1m[35m (56.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello_rails_react_test"[0m
-  [1m[35m (161.9ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
-  [1m[35m (142.4ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_test" ENCODING = 'unicode'[0m
-  [1m[35m (14.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
-  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6835469566630085430)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to CreateMessages (20230919153656)
+Migrating to CreateMessages (20230918144530)
   [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "greeting" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[36mActiveRecord::SchemaMigration Create (3.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230919153656"]]
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "greeting" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230918144530"]]
   [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mActiveRecord::InternalMetadata Create (2.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-09-27 07:08:14.078309"], ["updated_at", "2023-09-27 07:08:14.078309"]]
-  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-09-27 09:11:42.344129"], ["updated_at", "2023-09-27 09:11:42.344129"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(6835469566630085430)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mMessage Create (1.7ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "HI!  Welcome to Rails React App!!!"], ["created_at", "2023-09-27 07:08:14.556811"], ["updated_at", "2023-09-27 07:08:14.556811"]]
-  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "HI!  Message from the App!!!"], ["created_at", "2023-09-27 07:08:14.563587"], ["updated_at", "2023-09-27 07:08:14.563587"]]
-  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mMessage Create (1.3ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "HI!  How are you today?!!!"], ["created_at", "2023-09-27 07:08:14.568002"], ["updated_at", "2023-09-27 07:08:14.568002"]]
-  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mMessage Create (0.9ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "HI!  Trust me, This is very cool App!!!"], ["created_at", "2023-09-27 07:08:14.582279"], ["updated_at", "2023-09-27 07:08:14.582279"]]
+  [1m[36mMessage Create (1.6ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "hello"], ["created_at", "2023-09-27 09:11:42.834642"], ["updated_at", "2023-09-27 09:11:42.834642"]]
   [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mMessage Create (0.8ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "HI!  Haha, Again me welcoming you!!!"], ["created_at", "2023-09-27 07:08:14.588962"], ["updated_at", "2023-09-27 07:08:14.588962"]]
+  [1m[36mMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "How are you"], ["created_at", "2023-09-27 09:11:42.841693"], ["updated_at", "2023-09-27 09:11:42.841693"]]
   [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
-Started GET "/" for 127.0.0.1 at 2023-09-27 10:08:55 +0300
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Welcome to my site"], ["created_at", "2023-09-27 09:11:42.846189"], ["updated_at", "2023-09-27 09:11:42.846189"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Are you a programmer"], ["created_at", "2023-09-27 09:11:42.851266"], ["updated_at", "2023-09-27 09:11:42.851266"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.8ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Nice to meet you"], ["created_at", "2023-09-27 09:11:42.858458"], ["updated_at", "2023-09-27 09:11:42.858458"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2023-09-27 12:12:45 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by RootController#index as HTML
   Rendering layout layouts/application.html.erb
   Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 336)
-  Rendered layout layouts/application.html.erb (Duration: 507.4ms | Allocations: 33517)
-Completed 200 OK in 545ms (Views: 522.3ms | ActiveRecord: 0.0ms | Allocations: 37940)
+  Rendered root/index.html.erb within layouts/application (Duration: 11.2ms | Allocations: 463)
+  Rendered layout layouts/application.html.erb (Duration: 807.0ms | Allocations: 39335)
+Completed 200 OK in 875ms (Views: 827.0ms | ActiveRecord: 0.0ms | Allocations: 46216)
 
 
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 10:08:58 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/api/greetings"):
-  
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 10:09:00 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greeting"):
-  
-Started GET "/" for 127.0.0.1 at 2023-09-27 10:11:55 +0300
-  [1m[36mActiveRecord::SchemaMigration Pluck (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 336)
-  Rendered layout layouts/application.html.erb (Duration: 94.5ms | Allocations: 25658)
-Completed 200 OK in 136ms (Views: 108.8ms | ActiveRecord: 0.0ms | Allocations: 30081)
+Started GET "/messages" for 127.0.0.1 at 2023-09-27 12:12:52 +0300
+Processing by MessagesController#index as */*
+  [1m[36mMessage Load (3.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:3:in `index'
+Completed 200 OK in 44ms (Views: 1.5ms | ActiveRecord: 17.2ms | Allocations: 5851)
 
 
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 10:11:57 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/api/greetings"):
-  
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 10:11:59 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greeting"):
-  
-Started GET "/" for 127.0.0.1 at 2023-09-27 10:12:23 +0300
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 336)
-  Rendered layout layouts/application.html.erb (Duration: 89.5ms | Allocations: 25742)
-Completed 200 OK in 128ms (Views: 101.5ms | ActiveRecord: 0.0ms | Allocations: 30165)
+Started GET "/messages" for 127.0.0.1 at 2023-09-27 12:12:56 +0300
+Processing by MessagesController#index as */*
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 846)
 
 
-Started GET "/" for 127.0.0.1 at 2023-09-27 10:13:36 +0300
-Started GET "/" for 127.0.0.1 at 2023-09-27 10:13:39 +0300
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 10)
-  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 2929)
-Completed 200 OK in 11ms (Views: 10.8ms | ActiveRecord: 0.0ms | Allocations: 3451)
+Started GET "/messages" for 127.0.0.1 at 2023-09-27 12:12:58 +0300
+Processing by MessagesController#index as */*
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 846)
 
 
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 10)
-  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 2927)
-Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 3448)
+Started GET "/messages" for 127.0.0.1 at 2023-09-27 12:13:00 +0300
+Processing by MessagesController#index as */*
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 847)
 
 
-Started GET "/api/greetings" for 127.0.0.1 at 2023-09-27 10:13:43 +0300
-Processing by Api::GreetingsController#index as */*
-  [1m[36mMessage Load (6.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/api/greetings_controller.rb:3:in `index'
-Completed 200 OK in 41ms (Views: 0.3ms | ActiveRecord: 19.3ms | Allocations: 5872)
+Started GET "/messages" for 127.0.0.1 at 2023-09-27 12:13:03 +0300
+Processing by MessagesController#index as */*
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.5ms | Allocations: 835)
 
 
-Started GET "/greeting" for 127.0.0.1 at 2023-09-27 10:13:45 +0300
-  
-ActionController::RoutingError (No route matches [GET] "/greeting"):
-  
-Started GET "/" for 127.0.0.1 at 2023-09-27 10:13:55 +0300
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
-  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 2850)
-Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 3109)
+Started GET "/messages" for 127.0.0.1 at 2023-09-27 12:13:05 +0300
+Processing by MessagesController#index as */*
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 833)
 
 
-Started GET "/" for 127.0.0.1 at 2023-09-27 10:14:44 +0300
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
-  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2843)
-Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 3100)
-
-
-Started GET "/" for 127.0.0.1 at 2023-09-27 10:14:51 +0300
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
-  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 2828)
-Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 3085)
-
-
-Started GET "/" for 127.0.0.1 at 2023-09-27 10:15:23 +0300
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 336)
-  Rendered layout layouts/application.html.erb (Duration: 434.1ms | Allocations: 33753)
-Completed 200 OK in 474ms (Views: 446.8ms | ActiveRecord: 0.0ms | Allocations: 38176)
-
-
-Started GET "/" for 127.0.0.1 at 2023-09-27 10:25:19 +0300
-Processing by RootController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering root/index.html.erb within layouts/application
-  Rendered root/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 7)
-  Rendered layout layouts/application.html.erb (Duration: 100.8ms | Allocations: 2825)
-Completed 200 OK in 128ms (Views: 114.8ms | ActiveRecord: 0.0ms | Allocations: 3086)
+Started GET "/messages" for 127.0.0.1 at 2023-09-27 12:13:06 +0300
+Processing by MessagesController#index as */*
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:3:in `index'
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 833)
 
 
