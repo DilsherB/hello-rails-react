@@ -1,124 +1,257 @@
-  [1m[35m (1.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6835469566630085430)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to CreateMessages (20230919153541)
+  [1m[35m (241.1ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
+  [1m[35m (140.8ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_test" ENCODING = 'unicode'[0m
+  [1m[35m (20.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6835469566630085430)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMessages (20230918144530)
   [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (23.7ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "greeting" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
-  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(6835469566630085430)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (2.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[35m (115.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello_rails_react_development"[0m
-  [1m[35m (0.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello_rails_react_development"[0m
-  [1m[35m (427.6ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
-  [1m[35m (6.6ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
-  [1m[35m (209.9ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
-  [1m[35m (4.2ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
-  [1m[35m (165.3ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
-  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
-  [1m[35m (2.3ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
-  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
-  [1m[35m (77.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello_rails_react_development"[0m
-  [1m[35m (0.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello_rails_react_development"[0m
-  [1m[35m (204.4ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
-  [1m[35m (1.3ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
-  [1m[35m (56.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello_rails_react_development"[0m
-  [1m[35m (0.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello_rails_react_development"[0m
-  [1m[35m (195.9ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
-  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
-  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
-  [1m[35m (183.0ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_test" ENCODING = 'unicode'[0m
-  [1m[35m (352.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello_rails_react_development"[0m
-  [1m[35m (50.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello_rails_react_test"[0m
-  [1m[35m (160.9ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
-  [1m[35m (160.5ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_test" ENCODING = 'unicode'[0m
-  [1m[35m (32.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
-  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6835469566630085430)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Migrating to CreateMessages (20230919153541)
-  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "greeting" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[36mActiveRecord::SchemaMigration Create (4.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230919153541"]]
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "greeting" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230918144530"]]
   [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
-  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (2.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mActiveRecord::InternalMetadata Create (2.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-09-19 16:04:33.659892"], ["updated_at", "2023-09-19 16:04:33.659892"]]
-  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
-  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6835469566630085430)[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mMessage Create (4.3ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Hello, world!"], ["created_at", "2023-09-19 16:25:24.772649"], ["updated_at", "2023-09-19 16:25:24.772649"]]
-  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mMessage Create (0.8ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Welcome to our app!"], ["created_at", "2023-09-19 16:25:24.790200"], ["updated_at", "2023-09-19 16:25:24.790200"]]
-  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
-  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mMessage Create (0.8ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Nice to see you!"], ["created_at", "2023-09-19 16:25:24.796511"], ["updated_at", "2023-09-19 16:25:24.796511"]]
-  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
-  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mMessage Create (2.1ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "How can we help you today?"], ["created_at", "2023-09-19 16:25:24.804510"], ["updated_at", "2023-09-19 16:25:24.804510"]]
-  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
-  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Have a great day!"], ["created_at", "2023-09-19 16:25:24.812982"], ["updated_at", "2023-09-19 16:25:24.812982"]]
-  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
-Started GET "/" for 127.0.0.1 at 2023-09-19 19:40:08 +0300
+  [1m[36mActiveRecord::InternalMetadata Create (1.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-09-27 08:22:37.733481"], ["updated_at", "2023-09-27 08:22:37.733481"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6835469566630085430)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-09-27 11:22:59 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RootController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/index.html.erb within layouts/application
+  Rendered root/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 463)
+  Rendered layout layouts/application.html.erb (Duration: 331.8ms | Allocations: 71937)
+Completed 500 Internal Server Error in 388ms (ActiveRecord: 0.0ms | Allocations: 78760)
+
+
+  
+ActionView::Template::Error (Permission denied @ rb_file_s_rename - (C:/Users/dilsh/Desktop/New folder/hello-rails-react/tmp/cache/assets/sprockets/v4.0.0/Ih/Ih08bfyMdzFTCMIVTjcJORJa-0Vmqf-za-yoc69JL90.cache.21940.23832.617133, C:/Users/dilsh/Desktop/New folder/hello-rails-react/tmp/cache/assets/sprockets/v4.0.0/Ih/Ih08bfyMdzFTCMIVTjcJORJa-0Vmqf-za-yoc69JL90.cache)):
+  
+sprockets (4.2.1) lib/sprockets/path_utils.rb:362:in `rename'
+sprockets (4.2.1) lib/sprockets/path_utils.rb:362:in `atomic_write'
+sprockets (4.2.1) lib/sprockets/cache/file_store.rb:112:in `set'
+sprockets (4.2.1) lib/sprockets/cache.rb:227:in `set'
+sprockets (4.2.1) lib/sprockets/cache.rb:143:in `set'
+sprockets (4.2.1) lib/sprockets/loader.rb:343:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/bundle.rb:32:in `block in call'
+C:/Ruby32-x64/lib/ruby/3.2.0/set.rb:511:in `each_key'
+C:/Ruby32-x64/lib/ruby/3.2.0/set.rb:511:in `each'
+sprockets (4.2.1) lib/sprockets/bundle.rb:31:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.1) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+Started GET "/" for 127.0.0.1 at 2023-09-27 12:06:01 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20230918144530_create_messages.rb
+
+
+):
+  
+activerecord (7.0.8) lib/active_record/migration.rb:662:in `check_pending!'
+activerecord (7.0.8) lib/active_record/migration.rb:627:in `block (2 levels) in call'
+activesupport (7.0.8) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.8) lib/active_record/migration.rb:632:in `block in call'
+activerecord (7.0.8) lib/active_record/migration.rb:624:in `synchronize'
+activerecord (7.0.8) lib/active_record/migration.rb:624:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8) lib/rails/engine.rb:530:in `call'
+puma (5.6.7) lib/puma/configuration.rb:252:in `call'
+puma (5.6.7) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.7) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.7) lib/puma/server.rb:443:in `process_client'
+puma (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6835469566630085430)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by GreetingsController#random as HTML
-  [1m[36mMessage Load (3.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/greetings_controller.rb:3:in `random'
-Completed 200 OK in 64ms (Views: 1.0ms | ActiveRecord: 10.5ms | Allocations: 7893)
+Migrating to CreateMessages (20230918144530)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.3ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "greeting" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6835469566630085430)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (110.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello_rails_react_development"[0m
+  [1m[35m (93.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "hello_rails_react_test"[0m
+  [1m[35m (264.6ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
+  [1m[35m (201.4ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_test" ENCODING = 'unicode'[0m
+  [1m[35m (22.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6835469566630085430)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMessages (20230918144530)
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "greeting" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230918144530"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-09-27 09:11:42.344129"], ["updated_at", "2023-09-27 09:11:42.344129"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(6835469566630085430)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (1.6ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "hello"], ["created_at", "2023-09-27 09:11:42.834642"], ["updated_at", "2023-09-27 09:11:42.834642"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "How are you"], ["created_at", "2023-09-27 09:11:42.841693"], ["updated_at", "2023-09-27 09:11:42.841693"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Welcome to my site"], ["created_at", "2023-09-27 09:11:42.846189"], ["updated_at", "2023-09-27 09:11:42.846189"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Are you a programmer"], ["created_at", "2023-09-27 09:11:42.851266"], ["updated_at", "2023-09-27 09:11:42.851266"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMessage Create (0.8ms)[0m  [1m[32mINSERT INTO "messages" ("greeting", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["greeting", "Nice to meet you"], ["created_at", "2023-09-27 09:11:42.858458"], ["updated_at", "2023-09-27 09:11:42.858458"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2023-09-27 12:12:45 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RootController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/index.html.erb within layouts/application
+  Rendered root/index.html.erb within layouts/application (Duration: 11.2ms | Allocations: 463)
+  Rendered layout layouts/application.html.erb (Duration: 807.0ms | Allocations: 39335)
+Completed 200 OK in 875ms (Views: 827.0ms | ActiveRecord: 0.0ms | Allocations: 46216)
 
 
-Started GET "/" for 127.0.0.1 at 2023-09-19 19:40:13 +0300
-Processing by GreetingsController#random as HTML
-  [1m[36mMessage Load (1.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/greetings_controller.rb:3:in `random'
-Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 733)
+Started GET "/messages" for 127.0.0.1 at 2023-09-27 12:12:52 +0300
+Processing by MessagesController#index as */*
+  [1m[36mMessage Load (3.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:3:in `index'
+Completed 200 OK in 44ms (Views: 1.5ms | ActiveRecord: 17.2ms | Allocations: 5851)
 
 
-Started GET "/" for 127.0.0.1 at 2023-09-19 19:40:17 +0300
-Processing by GreetingsController#random as HTML
-  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/greetings_controller.rb:3:in `random'
-Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 731)
+Started GET "/messages" for 127.0.0.1 at 2023-09-27 12:12:56 +0300
+Processing by MessagesController#index as */*
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 846)
 
 
-Started GET "/" for 127.0.0.1 at 2023-09-19 19:40:44 +0300
-Processing by GreetingsController#random as HTML
-  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/greetings_controller.rb:3:in `random'
-Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 731)
+Started GET "/messages" for 127.0.0.1 at 2023-09-27 12:12:58 +0300
+Processing by MessagesController#index as */*
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 846)
 
 
-Started GET "/" for 127.0.0.1 at 2023-09-19 19:40:53 +0300
-Processing by GreetingsController#random as HTML
-  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/greetings_controller.rb:3:in `random'
-Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 716)
+Started GET "/messages" for 127.0.0.1 at 2023-09-27 12:13:00 +0300
+Processing by MessagesController#index as */*
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 847)
 
 
-Started GET "/" for 127.0.0.1 at 2023-09-19 19:41:04 +0300
-Processing by GreetingsController#random as HTML
-  [1m[36mMessage Load (0.9ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/greetings_controller.rb:3:in `random'
-Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 731)
+Started GET "/messages" for 127.0.0.1 at 2023-09-27 12:13:03 +0300
+Processing by MessagesController#index as */*
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.5ms | Allocations: 835)
 
 
-Started GET "/" for 127.0.0.1 at 2023-09-19 19:45:09 +0300
-Processing by GreetingsController#random as HTML
-  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/greetings_controller.rb:3:in `random'
-Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 716)
+Started GET "/messages" for 127.0.0.1 at 2023-09-27 12:13:05 +0300
+Processing by MessagesController#index as */*
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 833)
 
 
-Started GET "/" for 127.0.0.1 at 2023-09-19 19:45:31 +0300
-Processing by GreetingsController#random as HTML
-  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/greetings_controller.rb:10:in `random'
-Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 4.9ms | Allocations: 2690)
+Started GET "/messages" for 127.0.0.1 at 2023-09-27 12:13:06 +0300
+Processing by MessagesController#index as */*
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:3:in `index'
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 833)
 
 
